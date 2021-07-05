@@ -1,0 +1,12 @@
+1. CREATE VIEW nilai_ipk AS
+SELECT nim, nama, ROUND(((semester_1 + semester_2 + semester_3)/3),2) AS 'IPK' FROM nilai_mahasiswa;
+
+2. CREATE VIEW nilai_ipk_format AS
+SELECT CONCAT(nama,' (',  ROUND(((semester_1 + semester_2 + semester_3)/3),2) ,')' AS 'Nama dan IPK' FROM nilai_mahasiswa
+ORDER BY (semester_1+semester_2+semester_3)/3 DESC;
+
+3. INSERT INTO nilai_mahasiswa VALUES ('17090308', 'Pakjo', 3.78, 3.53, 3.41);
+
+4. SELECT * FROM nilai_ipk_format WHERE 'Nama dan IPK' LIKE '%R';
+
+5. DROP VIEW nilai_ipk; DROP VIEW nilai_ipk_format;
